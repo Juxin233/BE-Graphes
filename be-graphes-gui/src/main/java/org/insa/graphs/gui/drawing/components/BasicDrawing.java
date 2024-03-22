@@ -684,7 +684,7 @@ public class BasicDrawing extends JPanel implements Drawing {
                 // Draw arcs only if there are one-way arcs or if origin is lower than
                 // destination, avoid drawing two-ways arc twice.
                 if (arc.getRoadInformation().isOneWay()
-                        || arc.getOrigin().compareTo(arc.getDestination()) < 0) {
+                        || arc.getOrigin().getId() < arc.getDestination().getId()) {
                     drawArc(arc, palette, false);
                 }
             }
